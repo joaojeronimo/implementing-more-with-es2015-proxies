@@ -10,12 +10,12 @@ test('initialize', t => {
 
   const obj = { hello: 'world' };
   const savedObj = CRUD(obj);
-  const id = savedObj.id;
+  const _id = savedObj._id;
 
-  const objInStore = store[id];
+  const objInStore = store[_id];
   t.not(obj === objInStore);
   t.deepEqual(savedObj, objInStore);
-	t.deepEqual(assign({ id }, obj), objInStore);
+	t.deepEqual(assign({ _id }, obj), objInStore);
 });
 
 test('get', t => {
@@ -24,9 +24,9 @@ test('get', t => {
 
   const obj = { hello: 'world' };
   const savedObj = CRUD(obj);
-  const id = savedObj.id;
+  const _id = savedObj._id;
 
-  const objInStore = store[id];
+  const objInStore = store[_id];
 
   t.is(obj.hello, objInStore.hello);
 });
@@ -37,10 +37,10 @@ test('set', t => {
 
   const obj = { hello: 'world' };
   const savedObj = CRUD(obj);
-  const id = savedObj.id;
+  const _id = savedObj._id;
 
   savedObj.oneMoreProp = 42;
-  const objInStore = store[id];
+  const objInStore = store[_id];
 
   t.is(savedObj.oneMoreProp, objInStore.oneMoreProp);
 });
@@ -51,10 +51,10 @@ test('delete', t => {
 
   const obj = { hello: 'world' };
   const savedObj = CRUD(obj);
-  const id = savedObj.id;
+  const _id = savedObj._id;
 
   delete savedObj.hello;
-  const objInStore = store[id];
+  const objInStore = store[_id];
 
   t.is(objInStore.hello, undefined);
 })
