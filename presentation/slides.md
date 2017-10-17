@@ -28,15 +28,12 @@ I'm doing
 
 
 
-# Wait, wait...
+What are
 
-> I didn't see James' talk last month...
+# ES2015 Proxies ?
 
 
-
-# What are ES2015 Proxies ?
-
-a very underrated and forgotten API that allows for some magic
+a very underrated and forgotten API that let's you do some magic
 
 
 ```js
